@@ -10,15 +10,6 @@
 
 
   
-<img v-for= "item in tripimage" :key="item.id"  v-bind:src="'https://tourism.nrchrod.org/public/imagesoftrips/'+item.image_name" width="50%" />
-
-
-<p>
-<button onclick="myShow.previous()">Previous</button>
-<button onclick="myShow.next()">Next</button>
-</p>
-
-
 
 
 <section class="ftco-section ftco-no-pt ftco-no-pb" >

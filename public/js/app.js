@@ -21801,6 +21801,7 @@ __webpack_require__.r(__webpack_exports__);
       id: '',
       key: '',
       tripimage: '',
+city: '',
       country: '',
       program: '',
       data: '',
@@ -21816,7 +21817,8 @@ __webpack_require__.r(__webpack_exports__);
       reservation_email: '',
       reservation_phone_number: '',
       reservation_textarea: '',
-      reservation_message: ''
+      reservation_message: '',
+      cover: ''
     };
   },
   mounted: function mounted() {
@@ -21832,7 +21834,7 @@ __webpack_require__.r(__webpack_exports__);
       var formdata = new FormData();
       formdata.append('trip_id', this.id);
       var y = axios.post('https://tourism.nrchrod.org/api/getImagesfortrip', formdata).then(function (response) {
-        _this.tripimage = response.data.message;
+        _this.tripimage = response.data.message[0].image_name;
       });
     },
     send_reservation: function send_reservation() {
@@ -21870,6 +21872,7 @@ __webpack_require__.r(__webpack_exports__);
 
       var x = axios.post('https://tourism.nrchrod.org/api/return_specific_details_about_destinations', formdata).then(function (response) {
         _this3.data = response.data.message;
+_this3.city = response.data.message[0].city;
         _this3.country = response.data.message[0].Country;
         _this3.program = response.data.message[0].program;
         _this3.description = response.data.message[0].description;
@@ -21880,6 +21883,7 @@ __webpack_require__.r(__webpack_exports__);
         _this3.end_date = response.data.message[0].date_end;
         _this3.no_dayes = response.data.message[0].no_days;
         _this3.price = response.data.message[0].price_single_double;
+_this3.cover = response.data.message[0].cover;
       });
     }
   }
@@ -22330,44 +22334,51 @@ var _withScopeId = function _withScopeId(n) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-6189a0d0"), n = n(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)(), n;
 };
 var _hoisted_1 = {
-  "class": "container-fluid pt-3",
-  style: {
+  id: "",
+  "class": "hero-wrap js-fullheight",
+    "height": "500px"
     "padding-top": "250px"
   }
 };
-var _hoisted_2 = {
-  "class": "card-columns"
-};
-var _hoisted_3 = {
-  "class": "col-3"
-};
+var _hoisted_2 = ["src"];
+var _hoisted_3 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "overlay"
+  }, null, -1 /* HOISTED */);
+});
 var _hoisted_4 = {
-  "class": "text-center",
+  "class": "container",
   style: {
-    "font-weight": "bold"
+    "position": "sticky",
+    "bottom": "50%"
   }
 };
-var _hoisted_5 = ["src"];
-var _hoisted_6 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    onclick: "myShow.previous()"
-  }, "Previous"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    onclick: "myShow.next()"
-  }, "Next")], -1 /* HOISTED */);
-});
+var _hoisted_5 = {
+  "class": "row no-gutters slider-text js-fullheight align-items-center justify-content-center"
+};
+var _hoisted_6 = {
+  "class": "col-md-9 text text-center ftco-animate",
+  "data-scrollax": " properties: { translateY: '70%' }"
+};
 var _hoisted_7 = {
-  "class": "ftco-section ftco-no-pt ftco-no-pb"
+  "data-scrollax": "properties: { translateY: '30%', opacity: 1.6 }"
 };
 var _hoisted_8 = {
-  "class": "container"
+  "class": "ftco-section ftco-no-pt ftco-no-pb",
+  style: {
+    "padding-top": "15% !important"
+  }
 };
 var _hoisted_9 = {
-  "class": "row"
+  "class": "container"
 };
 var _hoisted_10 = {
-  "class": "col-lg-8 order-md-last ftco-animate py-md-5 mt-md-5"
+  "class": "row"
 };
 var _hoisted_11 = {
+  "class": "col-lg-8 order-md-last ftco-animate py-md-5 mt-md-5"
+};
+var _hoisted_12 = {
   id: "program"
 };
 var _hoisted_12 = /*#__PURE__*/_withScopeId(function () {

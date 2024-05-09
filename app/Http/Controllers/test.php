@@ -146,6 +146,11 @@ public function send_reservation_via_mail(Request $request){
         
     }
     
+public function getImagesfortrip(Request $request){
+
+    $dest_imags=destination_image::where('dest_fk',$request->trip_id)->latest('id')->limit(1)->get();
+    return response()->json(["message"=>$dest_imags]);
+    }
 
 
    
